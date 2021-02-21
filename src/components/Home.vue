@@ -1,15 +1,20 @@
 <template>
-  <div class="d-flex flex-column flex-root">
-    <div class="d-flex flex-row flex-column-fluid page">
-      <div id="kt_aside" class="aside aside-left aside-fixed d-flex flex-column flex-row-auto">
-        <appHeader></appHeader>
-        <appAside></appAside>
-      </div>
-      <appFooter>
+  <body class="sidebar-noneoverflow">
+  <appHeader></appHeader>
+  <div class="main-container" id="container">
+    <div class="overlay"></div>
+    <div class="search-overlay"></div>
+    <appAside></appAside>
 
-      </appFooter>
+    <div id="content" class="main-content">
+      <div class="layout-px-spacing">
+      </div>
+
+      <appFooter></appFooter>
     </div>
+
   </div>
+  </body>
 </template>
 
 <script>
@@ -26,7 +31,7 @@ export default {
   },
   components: {
     appHeader: Header,
-    appAside:Aside,
+    appAside: Aside,
     appFooter: Footer
   }
 }

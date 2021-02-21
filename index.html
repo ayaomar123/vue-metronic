@@ -3,21 +3,44 @@
 <head>
   <meta charset="utf-8">
   <title>vue-metronic</title>
-  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" rel="stylesheet">
-  <link href="/public/plugins/global/plugins.bundle.css"></link>
+  <link href="/public/assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/public/assets/css/plugins.css" rel="stylesheet">
+  <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+  <style>
+    /*
+        The below code is for DEMO purpose --- Use it if you are using this demo otherwise Remove it
+    */
+    /*.navbar .navbar-item.navbar-dropdown {
+        margin-left: auto;
+    }*/
+    .layout-px-spacing {
+      min-height: calc(100vh - 140px)!important;
+    }
+
+  </style>
+
+  <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="app"></div>
-<script>
-  console.log('test 1')
-</script>
-<script src="/dist/build.js"></script>
 
-<script src="/public/plugins/global/plugins.bundle.js"></script>
-<script src="/public/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="/public/js/scripts.bundle.js"></script>
-<script src="/public/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-<script src="/public/js/pages/widgets.js"></script>
+<script src="/dist/build.js"></script>
+<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+<script src="/public/assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="/public/bootstrap/js/popper.min.js"></script>
+<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+<script src="/public/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/public/assets/js/app.js"></script>
+
+<script>
+  $(document).ready(function() {
+    App.init();
+  });
+</script>
+<script src="/public/assets/js/custom.js"></script>
+<!-- END GLOBAL MANDATORY SCRIPTS -->
 </body>
 </html>

@@ -1,70 +1,63 @@
 <template>
-  <div class="d-flex flex-column flex-root">
-    <div class="d-flex flex-row flex-column-fluid page">
-      <div id="kt_aside" class="aside aside-left aside-fixed d-flex flex-column flex-row-auto">
-        <appHeader></appHeader>
+  <body class="sidebar-noneoverflow">
+  <appHeader></appHeader>
+  <div id="container" class="main-container">
+    <div class="overlay"></div>
+    <div class="search-overlay"></div>
+    <appAside>
 
-        <appAside></appAside>
+    </appAside>
 
-      </div>
-      <appFooter>
-        <div>
-          <h2>Create Category</h2>
-            <div>
-              <b-form v-if="show">
-                <b-form-group
-                  id="input-group-1"
-                  label="Email address:"
-                  label-for="input-1"
-                  description="We'll never share your email with anyone else."
-                >
-                  <b-form-input
-                    id="input-1"
-                    v-model="form.email"
-                    type="email"
-                    placeholder="Enter email"
-                    required
-                  ></b-form-input>
-                </b-form-group>
+    <div id="content" class="main-content">
 
-                <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-                  <b-form-input
-                    id="input-2"
-                    v-model="form.name"
-                    placeholder="Enter name"
-                    required
-                  ></b-form-input>
-                </b-form-group>
-
-                <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-                  <b-form-select
-                    id="input-3"
-                    v-model="form.food"
-                    :options="foods"
-                    required
-                  ></b-form-select>
-                </b-form-group>
-
-                <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
-                  <b-form-checkbox-group
-                    v-model="form.checked"
-                    id="checkboxes-4"
-                    :aria-describedby="ariaDescribedby"
-                  >
-                    <b-form-checkbox value="me">Check me out</b-form-checkbox>
-                    <b-form-checkbox value="that">Check that out</b-form-checkbox>
-                  </b-form-checkbox-group>
-                </b-form-group>
-
-                <b-button type="submit" variant="primary">Submit</b-button>
-                <b-button type="reset" variant="danger">Reset</b-button>
-              </b-form>
-
+      <div class="layout-px-spacing">
+        <div class="row layout-top-spacing">
+          <div class="col-lg-12 col-12 layout-spacing">
+            <div class="statbox widget box box-shadow">
+              <div class="widget-header">
+                <div class="row">
+                  <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4 class="text-center" style="background-color: #CCCCCC">إضافة</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="widget-content widget-content-area">
+                <form>
+                  <div class="form-group mb-4">
+                    <label for="exampleFormControlInput2">Email address</label>
+                    <input id="exampleFormControlInput2" class="form-control" placeholder="name@example.com"
+                           type="email">
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select id="exampleFormControlSelect1" class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea id="exampleFormControlTextarea1" class="form-control" rows="3"></textarea>
+                  </div>
+                  <div class="form-group mb-4 mt-3">
+                    <label for="exampleFormControlFile1">Example file input</label>
+                    <input id="exampleFormControlFile1" class="form-control-file" type="file">
+                  </div>
+                  <input class="mt-4 mb-4 btn btn-primary" name="time" type="submit">
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-      </appFooter>
+      </div>
     </div>
+    <appFooter></appFooter>
+
   </div>
+  </body>
 </template>
 <script>
 import Header from "../../layouts/Header";
@@ -73,21 +66,9 @@ import Footer from "../../layouts/Footer"
 
 export default {
   name: 'app',
-  data() {
-    return {
-      form: {
-        email: '',
-        name: '',
-        food: null,
-        checked: []
-      },
-      foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-      show: true
-    }
-  },
   components: {
     appHeader: Header,
-    appAside:Aside,
+    appAside: Aside,
     appFooter: Footer
   }
 }
